@@ -1,0 +1,19 @@
+{
+  "name": "Tam Khang – Bánh In Huế",
+  "short_name": "Tam Khang",
+  "icons": [
+    {
+      "src": "/assets/logo/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/logo/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#F5EBD4",
+  "background_color": "#F5EBD4",
+  "display": "standalone"
+}
