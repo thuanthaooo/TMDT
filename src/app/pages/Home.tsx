@@ -151,7 +151,7 @@ export default function Home() {
 
           {/* 5. Câu chuyện */}
           <section className="flex flex-col items-center text-center max-w-3xl mx-auto">
-            <img src="/assets/logo/emblem.png" alt="Tam Khang" className="w-20 h-20 mb-8 object-contain" />
+            <img src="/assets/logo/emblem-flour.png" alt="Tam Khang" className="w-20 h-20 mb-8 object-contain" />
             <h2 className="font-heading text-3xl sm:text-4xl text-nau-dam mb-6">Câu chuyện Tam Khang</h2>
             <p className="text-[15px] text-nau leading-relaxed mb-8">
               Tam Khang bắt đầu từ một khuôn bánh và một nắm bột mịn. Mỗi chiếc bánh in được ép khuôn, in nổi những họa tiết quen thuộc của xứ Huế...
@@ -173,7 +173,10 @@ export default function Home() {
             <div className="absolute inset-0 opacity-10 bg-[url('/assets/images/hero-bot-banh.webp')] mix-blend-overlay"></div>
             
             <div className="relative z-10 flex flex-col items-center">
-              <img src="/assets/logo/logo-stack.png" alt="Tam Khang" className="w-32 h-auto mb-8 brightness-0 invert" />
+              <div className="w-32 mb-8 flex flex-col items-center gap-3">
+                <img src="/assets/logo/emblem-flour.png" alt="Tam Khang" className="w-32 h-32 object-contain" />
+                <img src="/assets/logo/wordmark.png" alt="" className="w-full h-auto brightness-0 invert" />
+              </div>
               <h2 className="font-heading text-3xl sm:text-5xl text-white mb-10">Gửi một lời chúc phúc lộc thọ</h2>
               <Link to="/qua-tang#dat-hang" className="inline-flex items-center gap-3 bg-do text-white rounded-full px-10 py-4 text-[15px] font-medium hover:bg-red-800 transition-colors shadow-xl">
                 Đặt hàng ngay

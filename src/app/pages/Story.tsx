@@ -6,7 +6,7 @@ export default function Story() {
       {/* Header */}
       <div className="text-center mb-16">
         <img
-          src="/assets/logo/emblem.png"
+          src="/assets/logo/emblem-flour.png"
           alt="Tam Khang Emblem"
           className="w-[200px] h-[200px] mx-auto mb-8 object-contain"
           style={{ width: '200px', height: '200px' }}
@@ -42,11 +42,10 @@ export default function Story() {
         {/* Ý nghĩa logo */}
         <section className="bg-kem-nhat rounded-[2rem] p-8 sm:p-12 border border-[#E6D5AE] flex flex-col md:flex-row gap-12 items-center">
           <div className="w-full md:w-1/2 flex justify-center">
-            <img
-              src="/assets/logo/logo-stack.png"
-              alt="Logo Tam Khang"
-              className="w-64 max-w-full object-contain"
-            />
+            <div className="w-64 max-w-full flex flex-col items-center gap-4">
+              <img src="/assets/logo/emblem-flour.png" alt="Logo Tam Khang" className="w-full h-auto object-contain" />
+              <img src="/assets/logo/wordmark.png" alt="" className="w-full h-auto object-contain" />
+            </div>
           </div>
           <div className="w-full md:w-1/2">
             <h2 className="font-heading text-3xl text-nau-dam mb-4">Dấu ấn thương hiệu</h2>

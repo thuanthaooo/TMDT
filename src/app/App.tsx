@@ -25,7 +25,7 @@ function ScrollToTop() {
 function PageLayout({ children }: { children: ReactNode }) {
   return (
     <div className="min-h-screen bg-kem flex flex-col">
-      <Navbar />
+      <div className="page-header-shell"><Navbar /></div>
       <main className="flex-1 pt-12 sm:pt-16 px-4 sm:px-6 max-w-6xl mx-auto w-full">
         {children}
       </main>

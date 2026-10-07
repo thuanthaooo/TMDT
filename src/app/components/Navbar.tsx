@@ -23,14 +23,14 @@ export default function Navbar() {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <div className="flex justify-center pt-4 sm:pt-6 px-3 sm:px-4 relative z-50">
-      <div className="bg-transparent border border-[#E6D5AE] rounded-full pl-3 pr-4 py-2 w-full max-w-[940px] relative flex items-center">
+    <div className="site-nav-wrap flex justify-center relative z-50">
+      <div className="site-nav border rounded-full w-full relative flex items-center">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2 shrink-0">
+        <Link to="/" aria-current={isActive('/') ? 'page' : undefined} className="flex items-center gap-2 shrink-0">
           <img
-            src="/assets/logo/emblem.png"
+            src="/assets/logo/emblem-flour.png"
             alt="Tam Khang – Bánh In Huế"
-            className="w-8 h-8 sm:w-9 sm:h-9 object-contain"
+            className="w-11 h-11 sm:w-12 sm:h-12 object-contain"
           />
           <img
             src="/assets/logo/wordmark.png"
@@ -41,12 +41,10 @@ export default function Navbar() {
 
         {/* Desktop Links */}
         <nav className="hidden lg:flex items-center gap-6 text-[14px] text-nau-dam ml-auto font-medium">
-          <Link to="/" className="relative flex items-center hover:text-do transition-colors">
-            {isActive('/') && <span className="absolute -left-3 w-1.5 h-1.5 bg-do rounded-full"></span>}
+          <Link to="/" aria-current={isActive('/') ? 'page' : undefined} className="relative flex items-center hover:text-do transition-colors">
             Trang chủ
           </Link>
-          <Link to="/cau-chuyen" className="relative flex items-center hover:text-do transition-colors">
-            {isActive('/cau-chuyen') && <span className="absolute -left-3 w-1.5 h-1.5 bg-do rounded-full"></span>}
+          <Link to="/cau-chuyen" aria-current={isActive('/cau-chuyen') ? 'page' : undefined} className="relative flex items-center hover:text-do transition-colors">
             Câu chuyện
           </Link>
           <div className="group relative flex items-center hover:text-do transition-colors">
@@ -54,7 +52,6 @@ export default function Navbar() {
               to="/bo-suu-tap"
               className={`relative flex items-center gap-1 hover:text-do transition-colors ${isActive('/bo-suu-tap') ? 'text-do' : ''}`}
             >
-              {isActive('/bo-suu-tap') && <span className="absolute -left-3 w-1.5 h-1.5 bg-do rounded-full"></span>}
               Bộ sưu tập <ChevronDown size={14} className="stroke-[3.5]" />
             </Link>
             <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-xl shadow-lg border border-kem opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all flex flex-col py-2">
@@ -65,18 +62,15 @@ export default function Navbar() {
               ))}
             </div>
           </div>
-          <Link to="/qua-tang" className="relative flex items-center hover:text-do transition-colors">
-            {isActive('/qua-tang') && <span className="absolute -left-3 w-1.5 h-1.5 bg-do rounded-full"></span>}
+          <Link to="/qua-tang" aria-current={isActive('/qua-tang') ? 'page' : undefined} className="relative flex items-center hover:text-do transition-colors">
             Quà tặng
           </Link>
           {SITE.workshop.enabled && (
-            <Link to="/workshop" className="relative flex items-center hover:text-do transition-colors">
-              {isActive('/workshop') && <span className="absolute -left-3 w-1.5 h-1.5 bg-do rounded-full"></span>}
+            <Link to="/workshop" aria-current={isActive('/workshop') ? 'page' : undefined} className="relative flex items-center hover:text-do transition-colors">
               Workshop
             </Link>
           )}
-          <Link to="/lien-he" className="relative flex items-center hover:text-do transition-colors">
-            {isActive('/lien-he') && <span className="absolute -left-3 w-1.5 h-1.5 bg-do rounded-full"></span>}
+          <Link to="/lien-he" aria-current={isActive('/lien-he') ? 'page' : undefined} className="relative flex items-center hover:text-do transition-colors">
             Liên hệ
           </Link>
         </nav>
@@ -95,19 +89,19 @@ export default function Navbar() {
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <div className="absolute top-full left-2 right-2 mt-2 bg-kem-nhat rounded-2xl shadow-lg border border-[#E6D5AE] p-3 z-20 lg:hidden flex flex-col gap-2">
-            <Link to="/" className="px-4 py-3 font-medium text-nau-dam hover:bg-white rounded-xl">Trang chủ</Link>
-            <Link to="/cau-chuyen" className="px-4 py-3 font-medium text-nau-dam hover:bg-white rounded-xl">Câu chuyện</Link>
-            <Link to="/bo-suu-tap" className="px-4 py-3 font-medium text-nau-dam hover:bg-white rounded-xl">Bộ sưu tập</Link>
+            <Link to="/" aria-current={isActive('/') ? 'page' : undefined} className="px-4 py-3 font-medium text-nau-dam hover:bg-white rounded-xl">Trang chủ</Link>
+            <Link to="/cau-chuyen" aria-current={isActive('/cau-chuyen') ? 'page' : undefined} className="px-4 py-3 font-medium text-nau-dam hover:bg-white rounded-xl">Câu chuyện</Link>
+            <Link to="/bo-suu-tap" aria-current={isActive('/bo-suu-tap') ? 'page' : undefined} className="px-4 py-3 font-medium text-nau-dam hover:bg-white rounded-xl">Bộ sưu tập</Link>
             <div className="flex flex-col ml-4 border-l-2 border-[#E6D5AE] pl-2">
               {PRODUCTS.map(p => (
                 <Link key={p.slug} to={`/bo-suu-tap/${p.slug}`} className="px-4 py-2 text-nau-dam hover:bg-white rounded-xl">{p.name}</Link>
               ))}
             </div>
-            <Link to="/qua-tang" className="px-4 py-3 font-medium text-nau-dam hover:bg-white rounded-xl">Quà tặng</Link>
+            <Link to="/qua-tang" aria-current={isActive('/qua-tang') ? 'page' : undefined} className="px-4 py-3 font-medium text-nau-dam hover:bg-white rounded-xl">Quà tặng</Link>
             {SITE.workshop.enabled && (
-              <Link to="/workshop" className="px-4 py-3 font-medium text-nau-dam hover:bg-white rounded-xl">Workshop</Link>
+              <Link to="/workshop" aria-current={isActive('/workshop') ? 'page' : undefined} className="px-4 py-3 font-medium text-nau-dam hover:bg-white rounded-xl">Workshop</Link>
             )}
-            <Link to="/lien-he" className="px-4 py-3 font-medium text-nau-dam hover:bg-white rounded-xl">Liên hệ</Link>
+            <Link to="/lien-he" aria-current={isActive('/lien-he') ? 'page' : undefined} className="px-4 py-3 font-medium text-nau-dam hover:bg-white rounded-xl">Liên hệ</Link>
           </div>
         )}
       </div>
