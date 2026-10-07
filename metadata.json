@@ -1,0 +1,7 @@
+{
+  "name": "Tam Khang – Bánh In Huế",
+  "description": "Gìn giữ hương vị truyền thống, lan tỏa giá trị văn hóa Việt qua từng chiếc bánh in tinh tế.",
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

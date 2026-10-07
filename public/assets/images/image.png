@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" width="1000" height="420">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FBF7EE" />
+      <stop offset="60%" stop-color="#F6EED9" />
+      <stop offset="100%" stop-color="#EFE2C5" />
+    </linearGradient>
+
+    <!-- Sun Pattern Lines -->
+    <pattern id="sunLines" width="100" height="7" patternUnits="userSpaceOnUse">
+      <rect x="0" y="0" width="100" height="5" fill="#E8BD65" />
+      <rect x="0" y="5" width="100" height="2" fill="transparent" />
+    </pattern>
+
+    <!-- Vignette Shadow -->
+    <radialGradient id="vignette" cx="80%" cy="70%" r="70%">
+      <stop offset="0%" stop-color="#EADAB7" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#FDFBF7" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="1000" height="420" rx="16" fill="url(#bgGrad)" />
+  <rect width="1000" height="420" rx="16" fill="url(#vignette)" />
+
+  <!-- Sun Graphic on Right -->
+  <g transform="translate(860, 240)">
+    <circle cx="0" cy="0" r="82" fill="url(#sunLines)" opacity="0.88" />
+  </g>
+
+  <!-- Traditional Clouds in Bottom Right -->
+  <g stroke="#D4A759" stroke-width="2.5" fill="none" opacity="0.85" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Cloud 1 -->
+    <path d="M 760 380 Q 770 360 795 360 Q 820 360 830 380 Q 855 380 865 395 Q 875 410 860 415 L 750 415 Q 740 400 760 380 Z" fill="#F4E9CD" fill-opacity="0.6" />
+    <path d="M 775 385 C 785 375, 805 375, 815 388" />
+    
+    <!-- Cloud 2 (Main rolling clouds) -->
+    <path d="M 825 390 Q 840 365 870 365 Q 900 365 915 388 Q 940 388 955 402 Q 970 416 950 420 L 815 420 Z" fill="#F4E9CD" fill-opacity="0.7" />
+    <path d="M 845 390 C 860 380, 885 380, 895 395" />
+    
+    <!-- Cloud 3 (Bottom-most cloud curls) -->
+    <path d="M 885 350 Q 900 330 925 330 Q 950 330 965 350 Q 985 352 995 370 Q 1000 385 985 395 L 870 395 Q 865 370 885 350 Z" fill="#F7EED8" fill-opacity="0.5" />
+    <path d="M 905 350 C 920 340, 940 340, 950 355" />
+
+    <!-- Delicate accent cloud swirls -->
+    <path d="M 730 395 Q 745 385 760 395" />
+    <path d="M 810 350 Q 825 340 840 352" />
+  </g>
+
+  <!-- Title Lines -->
+  <g fill="#8C1D1D" font-family="'Cormorant Garamond', 'Times New Roman', Georgia, serif" font-weight="700">
+    <text x="140" y="115" font-size="39" letter-spacing="3.5">TINH HOA BÁNH IN HUẾ</text>
+    <text x="140" y="172" font-size="39" letter-spacing="3.5">TRAO GỬI PHÚC LỘC THỌ</text>
+  </g>
+
+  <!-- Subtitle Paragraph -->
+  <g fill="#432818" font-family="'Cormorant Garamond', Georgia, serif" font-style="italic" font-weight="500" font-size="28" letter-spacing="0.4">
+    <text x="140" y="242">Gìn giữ hương vị truyền thống,</text>
+    <text x="140" y="288">lan tỏa giá trị văn hoá Việt</text>
+    <text x="140" y="334">qua từng chiếc bánh in tinh tế.</text>
+  </g>
+
+  <!-- Traditional Red Seal Stamp (Triện Son) -->
+  <g transform="translate(565, 298)">
+    <!-- Outer stamp background -->
+    <rect x="0" y="0" width="46" height="46" rx="6" fill="#881B1B" />
+    <!-- Inner border line -->
+    <rect x="3" y="3" width="40" height="40" rx="4" fill="none" stroke="#F6ECD5" stroke-width="1.4" opacity="0.85" />
+    <!-- Stylized seal script lines representing 'Tam Khang' (TK) -->
+    <path d="M 12 12 L 34 12 M 23 12 L 23 34 M 14 20 L 32 20 M 14 28 L 32 28 M 16 34 L 30 34" stroke="#F6ECD5" stroke-width="1.8" stroke-linecap="round" fill="none" opacity="0.9" />
+  </g>
+</svg>

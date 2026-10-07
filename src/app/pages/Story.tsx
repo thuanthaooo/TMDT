@@ -8,24 +8,33 @@ export default function Story() {
         <img
           src="/assets/logo/emblem.png"
           alt="Tam Khang Emblem"
-          className="w-24 h-24 mx-auto mb-8 object-contain"
+          className="w-[200px] h-[200px] mx-auto mb-8 object-contain"
+          style={{ width: '200px', height: '200px' }}
         />
         <h1 className="font-heading text-4xl sm:text-5xl text-nau-dam mb-6">
           Câu chuyện Tam Khang
         </h1>
         <p className="text-[17px] text-nau-dam leading-relaxed max-w-2xl mx-auto">
-          Tam Khang bắt đầu từ một khuôn bánh và một nắm bột mịn. Mỗi chiếc bánh in được ép khuôn, in nổi những họa tiết quen thuộc của xứ Huế: áng mây, đóa sen, cánh hạc… Chúng tôi giữ lại hương vị xưa và làm mới cách trao gửi, để mỗi hộp bánh là một lời chúc phúc, lộc, thọ.
+          Tam Khang gìn giữ nghề bánh in Huế bằng sự tinh tế trong từng đường khắc. Mỗi chiếc bánh mang một lời chúc: Lộc thịnh vượng, Phúc an lành, Thọ khang kiện. Một món quà truyền thống, trao gửi bằng cả tấm lòng.
         </p>
       </div>
 
       <div className="space-y-16">
         {/* Ý nghĩa tên gọi */}
         <section className="bg-white rounded-[2rem] p-8 sm:p-12 shadow-sm text-center">
-          <h2 className="font-heading text-3xl text-nau-dam mb-4">Ý nghĩa tên "Tam Khang"</h2>
-          <div className="text-nau leading-relaxed">
-            <Pending />
-            <p className="mt-4 text-[14px] italic text-gray-500">
-              (Gợi ý: Gắn "Tam" (ba) với ba lời chúc Phúc – Lộc – Thọ, và "Khang" mang nghĩa an khang, khỏe mạnh.)
+          <h2 className="font-heading text-3xl text-nau-dam mb-6">Ý nghĩa tên thương hiệu</h2>
+          <div className="text-nau leading-relaxed max-w-xl mx-auto flex flex-col items-center">
+            <img
+              src="/assets/logo/wordmark.png"
+              alt="Tam Khang"
+              className="h-8 sm:h-10 mx-auto mb-6 object-contain"
+            />
+            <p className="text-[15px] sm:text-[16px] text-nau leading-relaxed text-center">
+              <span className="italic font-medium text-nau-dam">Tam (三):</span> là ba. Hợp với bộ ba Phúc, Lộc, Thọ.
+              <br />
+              <span className="italic font-medium text-nau-dam">Khang (康):</span> nghĩa là khỏe mạnh, bình an, yên ổn, như trong từ "an khang".
+              <br />
+              <span className="font-medium text-nau-dam">Tam Khang:</span> ba lời chúc về sự an khang, được gửi gắm trong mỗi hộp bánh.
             </p>
           </div>
         </section>

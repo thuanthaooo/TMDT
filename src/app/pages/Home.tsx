@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Wheat, Leaf, Heart, Gift, MessageCircle, Phone } from 'lucide-react';
 import Hero from '../components/Hero';
+import CollectionPreview from '../components/CollectionPreview';
 import Faq from '../components/Faq';
 import Footer from '../components/Footer';
 import { SITE } from '../data/site';
@@ -10,10 +11,56 @@ export default function Home() {
     <>
       <Hero />
       
+      {/* Khối giới thiệu & Bộ sưu tập Phúc Lộc Thọ ghép chung */}
+      <section className="bg-kem pt-14 sm:pt-20 pb-16 sm:pb-20">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 space-y-12 sm:space-y-16">
+          {/* Phần trên: Ảnh 400x400 và Khối chữ */}
+          <div className="flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-[64px]">
+            {/* Cột TRÁI: Ảnh đính kèm 400px x 400px bo góc 24px */}
+            <div className="w-[400px] h-[400px] max-w-full aspect-square rounded-[24px] overflow-hidden shadow-sm shrink-0">
+              <img
+                src="/assets/images/hop-phuc-loc-tho.webp"
+                alt="Tinh hoa bánh in Huế – Tam Khang Phúc Lộc Thọ"
+                className="w-full h-full object-cover"
+              />
+            </div>
+
+            {/* Cột PHẢI: Khối chữ canh TRÁI, căn giữa theo chiều dọc */}
+            <div className="flex flex-col justify-center items-start text-left max-w-[480px]">
+              {/* Tiêu đề 2 dòng, font-size: 34px */}
+              <h2
+                className="font-heading uppercase font-semibold text-[34px] leading-[1.3] text-[#7B2C35]"
+                style={{ fontSize: '34px', letterSpacing: '0.08em' }}
+              >
+                TINH HOA BÁNH IN HUẾ
+                <br />
+                TRAO GỬI PHÚC LỘC THỌ
+              </h2>
+
+              {/* Đoạn mô tả 3 dòng, font-size: 29px */}
+              <p
+                className="font-heading italic font-normal text-[29px] leading-[1.5] text-[#8A6E5C] mt-[24px]"
+                style={{ fontSize: '29px' }}
+              >
+                Gìn giữ hương vị truyền thống,
+                <br />
+                lan tỏa giá trị văn hoá Việt
+                <br />
+                qua từng chiếc bánh in tinh tế.
+              </p>
+            </div>
+          </div>
+
+          {/* Phần dưới: Bộ sưu tập 3 hộp bánh Phúc - Lộc - Thọ ghép liền mạch */}
+          <div>
+            <CollectionPreview />
+          </div>
+        </div>
+      </section>
+
       {/* Sections after hero */}
-      <main className="bg-kem pt-24 pb-32">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 space-y-32">
-          
+      <main className="bg-kem pt-8 sm:pt-12 pb-32">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 space-y-24 sm:space-y-32">
           {/* 1. Vì sao chọn Tam Khang */}
           <section>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
