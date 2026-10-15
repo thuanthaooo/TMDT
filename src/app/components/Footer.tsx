@@ -38,7 +38,6 @@ export default function Footer() {
               {SITE.workshop.enabled && (
                 <li><Link to="/workshop" className="hover:text-white transition-colors">Workshop trải nghiệm</Link></li>
               )}
-              <li><Link to="/lien-he" className="hover:text-white transition-colors">Hỗ trợ & Liên hệ</Link></li>
             </ul>
           </div>
 

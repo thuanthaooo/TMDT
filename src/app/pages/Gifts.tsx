@@ -1,4 +1,4 @@
-import OrderForm from '../components/OrderForm';
+import { Link } from 'react-router-dom';
 import Pending from '../components/Pending';
 
 export default function Gifts() {
@@ -78,8 +78,8 @@ export default function Gifts() {
 
       <div id="dat-hang" className="scroll-mt-32 max-w-3xl mx-auto">
         <h2 className="font-heading text-3xl sm:text-4xl text-center text-nau-dam mb-8">Đặt hộp quà</h2>
-        <p className="text-center text-nau mb-8">Vui lòng điền thông tin để chúng tôi chuẩn bị món quà chu đáo nhất.</p>
-        <OrderForm />
+        <p className="text-center text-nau mb-8">Chọn hộp bánh yêu thích, thêm lời chúc và điền thông tin giao hàng.</p>
+        <div className="flex justify-center"><Link to="/bo-suu-tap" className="checkout-primary">Chọn bánh cho giỏ quà</Link></div>
       </div>
     </div>
   );

@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { ChevronDown, Menu, X } from 'lucide-react';
+import { Menu, X, ShoppingBag } from 'lucide-react';
+import { useCart } from './CartContext';
 import { SITE } from '../data/site';
-import { PRODUCTS } from '../data/products';
+
 
 export default function Navbar() {
+  const { count } = useCart();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
 
@@ -24,7 +26,7 @@ export default function Navbar() {
 
   return (
     <div className="site-nav-wrap flex justify-center relative z-50">
-      <div className="site-nav border rounded-full w-full relative flex items-center">
+      <div className="site-nav w-full relative flex items-center">
         {/* Logo */}
         <Link to="/" aria-current={isActive('/') ? 'page' : undefined} className="flex items-center gap-2 shrink-0">
           <img
@@ -47,21 +49,9 @@ export default function Navbar() {
           <Link to="/cau-chuyen" aria-current={isActive('/cau-chuyen') ? 'page' : undefined} className="relative flex items-center hover:text-do transition-colors">
             Câu chuyện
           </Link>
-          <div className="group relative flex items-center hover:text-do transition-colors">
-            <Link
-              to="/bo-suu-tap"
-              className={`relative flex items-center gap-1 hover:text-do transition-colors ${isActive('/bo-suu-tap') ? 'text-do' : ''}`}
-            >
-              Bộ sưu tập <ChevronDown size={14} className="stroke-[3.5]" />
-            </Link>
-            <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-xl shadow-lg border border-kem opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all flex flex-col py-2">
-              {PRODUCTS.map(p => (
-                <Link key={p.slug} to={`/bo-suu-tap/${p.slug}`} className="px-4 py-2 hover:bg-kem-nhat hover:text-do text-nau-dam transition-colors">
-                  {p.name}
-                </Link>
-              ))}
-            </div>
-          </div>
+          <Link to="/bo-suu-tap" aria-current={isActive('/bo-suu-tap') ? 'page' : undefined} className="relative flex items-center hover:text-do transition-colors">
+            Bộ sưu tập
+          </Link>
           <Link to="/qua-tang" aria-current={isActive('/qua-tang') ? 'page' : undefined} className="relative flex items-center hover:text-do transition-colors">
             Quà tặng
           </Link>
@@ -70,13 +60,11 @@ export default function Navbar() {
               Workshop
             </Link>
           )}
-          <Link to="/lien-he" aria-current={isActive('/lien-he') ? 'page' : undefined} className="relative flex items-center hover:text-do transition-colors">
-            Liên hệ
-          </Link>
         </nav>
 
+        <Link to="/gio-hang" className="header-cart" aria-label={`Giỏ hàng, ${count} sản phẩm`} aria-current={isActive('/gio-hang') ? 'page' : undefined}><ShoppingBag size={23} /><span aria-hidden="true">{count}</span></Link>
         {/* Mobile menu toggle */}
-        <div className="ml-auto lg:hidden flex items-center">
+        <div className="lg:hidden flex items-center">
           <button
             className="p-2 text-nau-dam hover:text-do"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -92,16 +80,10 @@ export default function Navbar() {
             <Link to="/" aria-current={isActive('/') ? 'page' : undefined} className="px-4 py-3 font-medium text-nau-dam hover:bg-white rounded-xl">Trang chủ</Link>
             <Link to="/cau-chuyen" aria-current={isActive('/cau-chuyen') ? 'page' : undefined} className="px-4 py-3 font-medium text-nau-dam hover:bg-white rounded-xl">Câu chuyện</Link>
             <Link to="/bo-suu-tap" aria-current={isActive('/bo-suu-tap') ? 'page' : undefined} className="px-4 py-3 font-medium text-nau-dam hover:bg-white rounded-xl">Bộ sưu tập</Link>
-            <div className="flex flex-col ml-4 border-l-2 border-[#E6D5AE] pl-2">
-              {PRODUCTS.map(p => (
-                <Link key={p.slug} to={`/bo-suu-tap/${p.slug}`} className="px-4 py-2 text-nau-dam hover:bg-white rounded-xl">{p.name}</Link>
-              ))}
-            </div>
             <Link to="/qua-tang" aria-current={isActive('/qua-tang') ? 'page' : undefined} className="px-4 py-3 font-medium text-nau-dam hover:bg-white rounded-xl">Quà tặng</Link>
             {SITE.workshop.enabled && (
               <Link to="/workshop" aria-current={isActive('/workshop') ? 'page' : undefined} className="px-4 py-3 font-medium text-nau-dam hover:bg-white rounded-xl">Workshop</Link>
             )}
-            <Link to="/lien-he" aria-current={isActive('/lien-he') ? 'page' : undefined} className="px-4 py-3 font-medium text-nau-dam hover:bg-white rounded-xl">Liên hệ</Link>
           </div>
         )}
       </div>

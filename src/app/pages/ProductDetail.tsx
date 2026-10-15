@@ -1,10 +1,13 @@
 import { useParams, Navigate, Link } from 'react-router-dom';
-import { ShoppingBag, MessageCircle } from 'lucide-react';
+import AddToCart from '../components/AddToCart';
+import { MessageCircle } from 'lucide-react';
 import { PRODUCTS } from '../data/products';
 import { SITE } from '../data/site';
 import Pending from '../components/Pending';
 
 export default function ProductDetail() {
+
+
   const { slug } = useParams();
   const product = PRODUCTS.find(p => p.slug === slug);
 
@@ -73,14 +76,7 @@ export default function ProductDetail() {
                 <span className="text-2xl font-semibold text-nau-dam">{product.price || <Pending />}</span>
               </div>
               <div className="flex flex-col sm:flex-row gap-3">
-                <Link
-                  to="/qua-tang#dat-hang"
-                  className="flex-1 flex items-center justify-center gap-2 py-3 rounded-full text-white font-medium hover:opacity-90 transition-opacity"
-                  style={{ backgroundColor: product.accent }}
-                >
-                  <ShoppingBag size={18} />
-                  Đặt hàng
-                </Link>
+                <AddToCart slug={product.slug} name={product.name} accent={product.accent} />
                 {SITE.zalo ? (
                   <a
                     href={SITE.zalo}

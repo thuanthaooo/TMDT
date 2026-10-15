@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Wheat, Leaf, Heart, Gift, MessageCircle, Phone } from 'lucide-react';
+import { ArrowRight, Leaf, MessageCircle, Phone } from 'lucide-react';
 import Hero from '../components/Hero';
 import CollectionPreview from '../components/CollectionPreview';
 import Faq from '../components/Faq';
@@ -11,82 +11,16 @@ export default function Home() {
     <>
       <Hero />
       
-      {/* Khối giới thiệu & Bộ sưu tập Phúc Lộc Thọ ghép chung */}
+      {/* Bộ sưu tập Phúc Lộc Thọ */}
       <section className="bg-kem pt-14 sm:pt-20 pb-16 sm:pb-20">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 space-y-12 sm:space-y-16">
-          {/* Phần trên: Ảnh 400x400 và Khối chữ */}
-          <div className="flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-[64px]">
-            {/* Cột TRÁI: Ảnh đính kèm 400px x 400px bo góc 24px */}
-            <div className="w-[400px] h-[400px] max-w-full aspect-square rounded-[24px] overflow-hidden shadow-sm shrink-0">
-              <img
-                src="/assets/images/hop-phuc-loc-tho.webp"
-                alt="Tinh hoa bánh in Huế – Tam Khang Phúc Lộc Thọ"
-                className="w-full h-full object-cover"
-              />
-            </div>
-
-            {/* Cột PHẢI: Khối chữ canh TRÁI, căn giữa theo chiều dọc */}
-            <div className="flex flex-col justify-center items-start text-left max-w-[480px]">
-              {/* Tiêu đề 2 dòng, font-size: 34px */}
-              <h2
-                className="font-heading uppercase font-semibold text-[34px] leading-[1.3] text-[#7B2C35]"
-                style={{ fontSize: '34px', letterSpacing: '0.08em' }}
-              >
-                TINH HOA BÁNH IN HUẾ
-                <br />
-                TRAO GỬI PHÚC LỘC THỌ
-              </h2>
-
-              {/* Đoạn mô tả 3 dòng, font-size: 29px */}
-              <p
-                className="font-heading italic font-normal text-[29px] leading-[1.5] text-[#8A6E5C] mt-[24px]"
-                style={{ fontSize: '29px' }}
-              >
-                Gìn giữ hương vị truyền thống,
-                <br />
-                lan tỏa giá trị văn hoá Việt
-                <br />
-                qua từng chiếc bánh in tinh tế.
-              </p>
-            </div>
-          </div>
-
-          {/* Phần dưới: Bộ sưu tập 3 hộp bánh Phúc - Lộc - Thọ ghép liền mạch */}
-          <div>
-            <CollectionPreview />
-          </div>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <CollectionPreview />
         </div>
       </section>
 
       {/* Sections after hero */}
       <main className="bg-kem pt-8 sm:pt-12 pb-32">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 space-y-24 sm:space-y-32">
-          {/* 1. Vì sao chọn Tam Khang */}
-          <section>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-              <div className="flex flex-col items-center text-center p-6">
-                <Wheat className="text-vang mb-4" size={40} strokeWidth={1.5} />
-                <h3 className="font-heading text-xl text-nau-dam mb-2">Nguyên liệu chọn lọc</h3>
-                <p className="text-[14px] text-nau">Từ thiên nhiên tươi sạch</p>
-              </div>
-              <div className="flex flex-col items-center text-center p-6">
-                <Leaf className="text-vang mb-4" size={40} strokeWidth={1.5} />
-                <h3 className="font-heading text-xl text-nau-dam mb-2">Hương vị đậm đà</h3>
-                <p className="text-[14px] text-nau">Truyền thống mộc mạc xứ Huế</p>
-              </div>
-              <div className="flex flex-col items-center text-center p-6">
-                <Heart className="text-vang mb-4" size={40} strokeWidth={1.5} />
-                <h3 className="font-heading text-xl text-nau-dam mb-2">Thủ công tinh xảo</h3>
-                <p className="text-[14px] text-nau">Gói trọn tình bánh Việt</p>
-              </div>
-              <div className="flex flex-col items-center text-center p-6">
-                <Gift className="text-vang mb-4" size={40} strokeWidth={1.5} />
-                <h3 className="font-heading text-xl text-nau-dam mb-2">Quà tặng ý nghĩa</h3>
-                <p className="text-[14px] text-nau">Trao gửi phúc lộc thọ</p>
-              </div>
-            </div>
-          </section>
-
           {/* 2. Ba lời chúc */}
           <section className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1">
@@ -138,14 +72,22 @@ export default function Home() {
 
           {/* 4. Workshop teaser */}
           {SITE.workshop.enabled && (
-            <section className="text-center max-w-3xl mx-auto">
-              <h2 className="font-heading text-3xl sm:text-4xl text-nau-dam mb-6">Tự tay làm chiếc bánh in của riêng bạn</h2>
-              <p className="text-[15px] text-nau leading-relaxed mb-8">
-                Workshop 60 – 90 phút tại làng bánh Kim Long: nghe nghệ nhân kể chuyện, tự ép khuôn và mang về hộp bánh do chính tay bạn làm.
-              </p>
-              <Link to="/workshop" className="inline-flex items-center gap-2 bg-transparent border-2 border-nau-dam text-nau-dam rounded-full px-8 py-3 text-[14px] font-medium hover:bg-kem-nhat transition-colors">
-                Xem workshop
-              </Link>
+            <section className="workshop-banner" aria-labelledby="workshop-banner-title">
+              <div className="workshop-banner-photo">
+                <img src="/assets/images/workshop-banh-trang.png" alt="Người thợ ép bánh in trắng ngà với hoa văn Phúc, Lộc, Thọ trong khuôn gỗ" loading="lazy" width={1536} height={1024} />
+              </div>
+              <div className="workshop-banner-copy">
+                <Leaf className="workshop-banner-leaf workshop-banner-leaf-top" aria-hidden="true" />
+                <Leaf className="workshop-banner-leaf workshop-banner-leaf-bottom" aria-hidden="true" />
+                <p className="workshop-banner-eyebrow">Workshop<span aria-hidden="true" /></p>
+                <h2 id="workshop-banner-title">Tự tay làm bánh,<br />mang về một nét Huế</h2>
+                <p className="workshop-banner-description">
+                  Trải nghiệm quy trình làm bánh in truyền thống, tự tay tạo nên những chiếc bánh mang đậm dấu ấn văn hoá Huế.
+                </p>
+                <Link to="/workshop" className="workshop-banner-link">
+                  Khám phá workshop <ArrowRight size={18} aria-hidden="true" />
+                </Link>
+              </div>
             </section>
           )}
 

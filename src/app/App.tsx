@@ -1,6 +1,9 @@
 import { useEffect, ReactNode } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Home from './pages/Home';
+import Checkout from './pages/Checkout';
+import PaymentDesign from './pages/PaymentDesign';
+import { CartProvider } from './components/CartContext';
 import Navbar from './components/Navbar';
 
 import Story from './pages/Story';
@@ -36,10 +39,13 @@ function PageLayout({ children }: { children: ReactNode }) {
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <CartProvider><BrowserRouter>
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/gio-hang" element={<PageLayout><Checkout cartOnly /></PageLayout>} />
+        <Route path="/thanh-toan" element={<PageLayout><Checkout /></PageLayout>} />
+        <Route path="/giao-dien-thanh-toan" element={<PageLayout><PaymentDesign /></PageLayout>} />
         
         <Route path="/cau-chuyen" element={<PageLayout><Story /></PageLayout>} />
         <Route path="/bo-suu-tap" element={<PageLayout><Collection /></PageLayout>} />
@@ -51,6 +57,6 @@ export default function App() {
         
         <Route path="*" element={<PageLayout><NotFound /></PageLayout>} />
       </Routes>
-    </BrowserRouter>
+    </BrowserRouter></CartProvider>
   );
 }

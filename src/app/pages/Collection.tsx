@@ -1,8 +1,11 @@
 import { Link } from 'react-router-dom';
+import AddToCart from '../components/AddToCart';
 import { PRODUCTS } from '../data/products';
 import Pending from '../components/Pending';
 
 export default function Collection() {
+
+
   return (
     <div className="pb-20">
       {/* Header */}
@@ -62,13 +65,7 @@ export default function Collection() {
                 >
                   Xem chi tiết
                 </Link>
-                <Link 
-                  to={`/qua-tang#dat-hang`}
-                  className="inline-flex justify-center items-center px-6 py-2.5 rounded-full border-2 text-nau-dam font-medium hover:bg-kem-nhat transition-colors"
-                  style={{ borderColor: product.accent }}
-                >
-                  Đặt hàng
-                </Link>
+                <AddToCart slug={product.slug} name={product.name} accent={product.accent} />
               </div>
             </div>
           </div>
